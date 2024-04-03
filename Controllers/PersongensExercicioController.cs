@@ -12,7 +12,7 @@ using RpgApi.Models.Enuns;
 namespace RpgApi.Controllers
 {
     [ApiController]
-    [Route("[Controller]")]
+    [Route("[controller]")]
     public class PersongensExercicioController : ControllerBase
     {
          private static List<Personagem> personagens = new List<Personagem>()

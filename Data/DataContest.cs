@@ -11,13 +11,13 @@ namespace RpgApi.Data
     public class DataContest : DbContext
     {
         //Criar construtor CTOR + TAB
-        public DataContest(DbContextOptions<DataContest>options) : base(options) //cria o chamado para o banco de dados
+        public DataContest(DbContextOptions<DataContest>options) : base(options) //cria o chamado para o banco de dados é o construtor
         {
             
         }
         public DbSet<Personagem> TB_PERSONAGENS { get; set; } //nome dado a tabela no banco de dados
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)// override serve para alterar
         {
             modelBuilder.Entity<Personagem>().ToTable("TB_PERSONAGENS");
 
@@ -33,9 +33,9 @@ namespace RpgApi.Data
             );
             //base.OnModelCreating(modelBuilder);
         }
-        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)//convensao para configurar a base, regras
         {
-            configurationBuilder.Properties<string>().HaveColumnType("varchar").HaveMaxLength(200);
+            configurationBuilder.Properties<string>().HaveColumnType("Varchar").HaveMaxLength(200);
         }
 
     }
