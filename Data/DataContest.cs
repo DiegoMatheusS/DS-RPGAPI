@@ -87,8 +87,8 @@ namespace RpgApi.Data
             modelBuilder.Entity<Habilidade>().HasData
             (
                 new Habilidade(){Id=1, Nome="Adormecer", Dano=39},
-                new Habilidade(){Id=2, Nome="COngelar", Dano=41},
-                new Habilidade(){Id=3, Nome="Adormecer", Dano=37}
+                new Habilidade(){Id=2, Nome="Congelar", Dano=41},
+                new Habilidade(){Id=3, Nome="Hipnotizar", Dano=37}
             );
             modelBuilder.Entity<PersonagemHabilidade>().HasData
             (
