@@ -20,7 +20,7 @@ namespace RpgApi.Data
 
         public DbSet<Personagem> TB_PERSONAGENS { get; set; } //nome dado a tabela no banco de dados
 
-        public DbSet<Usuario> TB_USUARIO { get; set; }
+        public DbSet<Usuario> TB_USUARIOS { get; set; }
 
         public DbSet<Arma> TB_ARMAS { get; set; }
 
@@ -33,7 +33,6 @@ namespace RpgApi.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)// override serve para alterar
         {
 
-            
             modelBuilder.Entity<Personagem>().ToTable("TB_PERSONAGENS");
             modelBuilder.Entity<Arma>().ToTable("TB_ARMAS");
             modelBuilder.Entity<Usuario>().ToTable("TB_USUARIOS");
