@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RpgApi.Data;
 using RpgApi.Models;
+using System.Collections.Generic;
 
 namespace RpgApi.Controllers
 {
@@ -26,9 +27,11 @@ namespace RpgApi.Controllers
             {
                 Personagem p = await _context.TB_PERSONAGENS
                     .Include(ar => ar.Arma)
+                    .Include(us => us.Usuario)
                     .Include(ph => ph.PersonagemHabilidades)
                         .ThenInclude(h => h.Habilidade)
                     .FirstOrDefaultAsync(pBusca => pBusca.Id == id);
+
 
                 return Ok(p);
             }
@@ -36,6 +39,7 @@ namespace RpgApi.Controllers
             {
                 return BadRequest(ex.Message);                
             }
+           
         }
         [HttpGet("GetAll")]
         public async Task<IActionResult> Get()
@@ -110,6 +114,6 @@ namespace RpgApi.Controllers
                 return BadRequest (ex.Message);
             }
         }
-
+    
     }
 }

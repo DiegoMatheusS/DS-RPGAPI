@@ -28,6 +28,7 @@ namespace RpgApi.Data
 
         public DbSet<PersonagemHabilidade> TB_PERSONAGENS_HABILIDADES { get; set; }
 
+        public DbSet<Disputa> TB_DISPUTAS { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)// override serve para alterar
@@ -38,7 +39,7 @@ namespace RpgApi.Data
             modelBuilder.Entity<Usuario>().ToTable("TB_USUARIOS");
             modelBuilder.Entity<Habilidade>().ToTable("TB_HABILIDADES");
             modelBuilder.Entity<PersonagemHabilidade>().ToTable("TB_PERSONAGENS_HABILIDADES");
-
+            modelBuilder.Entity<Disputa>().ToTable("TB_DISPUTA");
 
             modelBuilder.Entity<Usuario>()
                 .HasMany(e => e.Personagens)
@@ -46,6 +47,15 @@ namespace RpgApi.Data
                 .HasForeignKey(e => e.UsuarioId)
                 .IsRequired(false);
 
+
+            modelBuilder.Entity<Disputa>().HasKey(d =>d.Id);//Indicando chave primária da entidade
+            //Abaixo fica o mapeamento do nome das colunas da tabela para as pripriedads da classe
+            modelBuilder.Entity<Disputa>().Property(d => d.DataDisputa).HasColumnName("Dt_Disputa");
+            modelBuilder.Entity<Disputa>().Property(d => d.AtacanteId).HasColumnName("AtacanteId");
+            modelBuilder.Entity<Disputa>().Property(d => d.OponenteId).HasColumnName("OponenteId");
+            modelBuilder.Entity<Disputa>().Property(d => d.Narracao).HasColumnName("Tx_Narracao");
+
+            modelBuilder.Entity<Personagem>().Property(d => d.Vitorias).HasColumnName("Vitoris");//coloquei pq escrevi errado nome da collumn
 
             //Relacionamento One to One (um para um)
             modelBuilder.Entity<Personagem>()
