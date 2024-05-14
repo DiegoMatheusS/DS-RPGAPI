@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RpgApi.Models;
 using RpgApi.Models.Enuns;
+using RpgApi.Data;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace RpgApi.Controllers
@@ -13,7 +15,12 @@ namespace RpgApi.Controllers
     [Route("[controller]")]
     public class ArmasController : ControllerBase
     {
+        private readonly DataContest _context;
 
+        public ArmasController(DataContest context)
+        {
+            _context = context;
+        }
         private static List<Arma> armamento = new List<Arma>()
         {
                 new Arma() { Id = 1, Nome = "Sword", Dano = 10},
@@ -24,21 +31,39 @@ namespace RpgApi.Controllers
                 new Arma() { Id = 6, Nome = "CajadoDeath", Dano = 30},
                 new Arma() { Id = 7, Nome = "Guns", Dano = 100}
         };
-        [HttpGet ("GetAll")]
+        [HttpGet("GetAll")]
         public IActionResult Get()
         {
             return Ok(armamento);
         }
 
         [HttpPost]
-        public IActionResult AddArma(Arma novoArma)
+        public async Task<IActionResult> Add(Arma novoArma)
         {
-            if (novoArma.Dano == 0)
-            return BadRequest("Dano não poder ter o valor igual a 0 (zero.)");
+            try
+            {
+                if (novoArma.Dano == 0)
+                    throw new Exception("Dano não poder ter o valor igual a 0 (zero.)");
 
-    
-            armamento.Add(novoArma);
-            return Ok(armamento);
+                Personagem? p = await _context.TB_PERSONAGENS.FirstOrDefaultAsync(p => p.Id == novoArma.PersonagemId);
+
+                if (p == null)
+                    throw new Exception("Não Existe personagem com o Id informado.");
+
+                Arma buscaArma = await _context.TB_ARMAS.FirstOrDefaultAsync(a => a.PersonagemId == novoArma.Id);
+
+                if (buscaArma == null)
+                    throw new Exception("O Personagem selecionado já contem uma arma atribuída a ele.");
+
+                await _context.TB_ARMAS.AddAsync(novoArma);
+                await _context.SaveChangesAsync();
+
+                return Ok(novoArma.Id);
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut]
@@ -50,18 +75,20 @@ namespace RpgApi.Controllers
             armamentoAlterado.Id = p.Id;
             return Ok(armamento);
         }
+
+        
         [HttpGet("{id}")]
         public IActionResult GetSingle(int id)
         {
             return Ok(armamento.FirstOrDefault(pe => pe.Id == id));
-        
+
         }
 
-         [HttpDelete("{id}")]
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             armamento.RemoveAll(pers => pers.Id == id);
             return Ok(armamento);
         }
     }
-}  
+}

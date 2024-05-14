@@ -39,7 +39,7 @@ namespace RpgApi.Data
             modelBuilder.Entity<Usuario>().ToTable("TB_USUARIOS");
             modelBuilder.Entity<Habilidade>().ToTable("TB_HABILIDADES");
             modelBuilder.Entity<PersonagemHabilidade>().ToTable("TB_PERSONAGENS_HABILIDADES");
-            modelBuilder.Entity<Disputa>().ToTable("TB_DISPUTA");
+            modelBuilder.Entity<Disputa>().ToTable("TB_DISPUTAS");
 
             modelBuilder.Entity<Usuario>()
                 .HasMany(e => e.Personagens)
