@@ -181,7 +181,7 @@ GO
 ALTER TABLE [TB_PERSONAGENS] ADD [Disputas] int NOT NULL DEFAULT 0;
 GO
 
-ALTER TABLE [TB_PERSONAGENS] ADD [Vitoris] int NOT NULL DEFAULT 0;
+ALTER TABLE [TB_PERSONAGENS] ADD [Vitorias] int NOT NULL DEFAULT 0;
 GO
 
 ALTER TABLE [TB_ARMAS] ADD [PersonagemId] int NOT NULL DEFAULT 0;
@@ -229,43 +229,43 @@ SELECT @@ROWCOUNT;
 
 GO
 
-UPDATE [TB_PERSONAGENS] SET [Derrotas] = 0, [Disputas] = 0, [Vitoris] = 0
+UPDATE [TB_PERSONAGENS] SET [Derrotas] = 0, [Disputas] = 0, [Vitorias] = 0
 WHERE [Id] = 1;
 SELECT @@ROWCOUNT;
 
 GO
 
-UPDATE [TB_PERSONAGENS] SET [Derrotas] = 0, [Disputas] = 0, [Vitoris] = 0
+UPDATE [TB_PERSONAGENS] SET [Derrotas] = 0, [Disputas] = 0, [Vitorias] = 0
 WHERE [Id] = 2;
 SELECT @@ROWCOUNT;
 
 GO
 
-UPDATE [TB_PERSONAGENS] SET [Derrotas] = 0, [Disputas] = 0, [Vitoris] = 0
+UPDATE [TB_PERSONAGENS] SET [Derrotas] = 0, [Disputas] = 0, [Vitorias] = 0
 WHERE [Id] = 3;
 SELECT @@ROWCOUNT;
 
 GO
 
-UPDATE [TB_PERSONAGENS] SET [Derrotas] = 0, [Disputas] = 0, [Vitoris] = 0
+UPDATE [TB_PERSONAGENS] SET [Derrotas] = 0, [Disputas] = 0, [Vitorias] = 0
 WHERE [Id] = 4;
 SELECT @@ROWCOUNT;
 
 GO
 
-UPDATE [TB_PERSONAGENS] SET [Derrotas] = 0, [Disputas] = 0, [Vitoris] = 0
+UPDATE [TB_PERSONAGENS] SET [Derrotas] = 0, [Disputas] = 0, [Vitorias] = 0
 WHERE [Id] = 5;
 SELECT @@ROWCOUNT;
 
 GO
 
-UPDATE [TB_PERSONAGENS] SET [Derrotas] = 0, [Disputas] = 0, [Vitoris] = 0
+UPDATE [TB_PERSONAGENS] SET [Derrotas] = 0, [Disputas] = 0, [Vitorias] = 0
 WHERE [Id] = 6;
 SELECT @@ROWCOUNT;
 
 GO
 
-UPDATE [TB_PERSONAGENS] SET [Derrotas] = 0, [Disputas] = 0, [Vitoris] = 0
+UPDATE [TB_PERSONAGENS] SET [Derrotas] = 0, [Disputas] = 0, [Vitorias] = 0
 WHERE [Id] = 7;
 SELECT @@ROWCOUNT;
 

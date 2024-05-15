@@ -25,7 +25,7 @@ namespace RpgApi.Migrations
                 defaultValue: 0);
 
             migrationBuilder.AddColumn<int>(
-                name: "Vitoris",
+                name: "Vitorias",
                 table: "TB_PERSONAGENS",
                 type: "int",
                 nullable: false,
@@ -91,49 +91,49 @@ namespace RpgApi.Migrations
                 table: "TB_PERSONAGENS",
                 keyColumn: "Id",
                 keyValue: 1,
-                columns: new[] { "Derrotas", "Disputas", "Vitoris" },
+                columns: new[] { "Derrotas", "Disputas", "Vitorias" },
                 values: new object[] { 0, 0, 0 });
 
             migrationBuilder.UpdateData(
                 table: "TB_PERSONAGENS",
                 keyColumn: "Id",
                 keyValue: 2,
-                columns: new[] { "Derrotas", "Disputas", "Vitoris" },
+                columns: new[] { "Derrotas", "Disputas", "Vitorias" },
                 values: new object[] { 0, 0, 0 });
 
             migrationBuilder.UpdateData(
                 table: "TB_PERSONAGENS",
                 keyColumn: "Id",
                 keyValue: 3,
-                columns: new[] { "Derrotas", "Disputas", "Vitoris" },
+                columns: new[] { "Derrotas", "Disputas", "Vitorias" },
                 values: new object[] { 0, 0, 0 });
 
             migrationBuilder.UpdateData(
                 table: "TB_PERSONAGENS",
                 keyColumn: "Id",
                 keyValue: 4,
-                columns: new[] { "Derrotas", "Disputas", "Vitoris" },
+                columns: new[] { "Derrotas", "Disputas", "Vitorias" },
                 values: new object[] { 0, 0, 0 });
 
             migrationBuilder.UpdateData(
                 table: "TB_PERSONAGENS",
                 keyColumn: "Id",
                 keyValue: 5,
-                columns: new[] { "Derrotas", "Disputas", "Vitoris" },
+                columns: new[] { "Derrotas", "Disputas", "Vitorias" },
                 values: new object[] { 0, 0, 0 });
 
             migrationBuilder.UpdateData(
                 table: "TB_PERSONAGENS",
                 keyColumn: "Id",
                 keyValue: 6,
-                columns: new[] { "Derrotas", "Disputas", "Vitoris" },
+                columns: new[] { "Derrotas", "Disputas", "Vitorias" },
                 values: new object[] { 0, 0, 0 });
 
             migrationBuilder.UpdateData(
                 table: "TB_PERSONAGENS",
                 keyColumn: "Id",
                 keyValue: 7,
-                columns: new[] { "Derrotas", "Disputas", "Vitoris" },
+                columns: new[] { "Derrotas", "Disputas", "Vitorias" },
                 values: new object[] { 0, 0, 0 });
 
             migrationBuilder.UpdateData(
@@ -178,7 +178,7 @@ namespace RpgApi.Migrations
                 table: "TB_PERSONAGENS");
 
             migrationBuilder.DropColumn(
-                name: "Vitoris",
+                name: "Vitorias",
                 table: "TB_PERSONAGENS");
 
             migrationBuilder.DropColumn(

@@ -184,7 +184,7 @@ namespace RpgApi.Migrations
                     b.Property<int?>("UsuarioId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Vitoris")
+                    b.Property<int>("Vitorias")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -206,7 +206,7 @@ namespace RpgApi.Migrations
                             Nome = "Frodo",
                             PontosVida = 100,
                             UsuarioId = 1,
-                            Vitoris = 0
+                            Vitorias = 0
                         },
                         new
                         {
@@ -220,7 +220,7 @@ namespace RpgApi.Migrations
                             Nome = "Sam",
                             PontosVida = 100,
                             UsuarioId = 1,
-                            Vitoris = 0
+                            Vitorias = 0
                         },
                         new
                         {
@@ -234,7 +234,7 @@ namespace RpgApi.Migrations
                             Nome = "Galadriel",
                             PontosVida = 100,
                             UsuarioId = 1,
-                            Vitoris = 0
+                            Vitorias = 0
                         },
                         new
                         {
@@ -248,7 +248,7 @@ namespace RpgApi.Migrations
                             Nome = "Gandalf",
                             PontosVida = 100,
                             UsuarioId = 1,
-                            Vitoris = 0
+                            Vitorias = 0
                         },
                         new
                         {
@@ -262,7 +262,7 @@ namespace RpgApi.Migrations
                             Nome = "Hobbit",
                             PontosVida = 100,
                             UsuarioId = 1,
-                            Vitoris = 0
+                            Vitorias = 0
                         },
                         new
                         {
@@ -276,7 +276,7 @@ namespace RpgApi.Migrations
                             Nome = "Celeborn",
                             PontosVida = 100,
                             UsuarioId = 1,
-                            Vitoris = 0
+                            Vitorias = 0
                         },
                         new
                         {
@@ -290,7 +290,7 @@ namespace RpgApi.Migrations
                             Nome = "Radagast",
                             PontosVida = 100,
                             UsuarioId = 1,
-                            Vitoris = 0
+                            Vitorias = 0
                         });
                 });
 

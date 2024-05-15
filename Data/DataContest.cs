@@ -55,7 +55,9 @@ namespace RpgApi.Data
             modelBuilder.Entity<Disputa>().Property(d => d.OponenteId).HasColumnName("OponenteId");
             modelBuilder.Entity<Disputa>().Property(d => d.Narracao).HasColumnName("Tx_Narracao");
 
-            modelBuilder.Entity<Personagem>().Property(d => d.Vitorias).HasColumnName("Vitoris");//coloquei pq escrevi errado nome da collumn
+            modelBuilder.Entity<Personagem>().Property(d => d.Vitorias).HasColumnName("Vitorias");//coloquei pq escrevi errado nome da collumn
+
+
 
             //Relacionamento One to One (um para um)
             modelBuilder.Entity<Personagem>()
